@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+ margin: 0 auto;
+ transition: 0.5s ease all;
+}
+*:focus {
+ outline: none;
+}
+body {
+ margin: 0 auto;
+ background: #1d1f20;
+ font-family: sans-serif;
+ text-transform: uppercase;
+ color: #F4F4F8;
+}
+#wrapper {
+ max-width: 300px;
+ width: 100%;
+ background: #FF5154;
+ padding: 15px;
+ display: flex;
+ margin-top: 15px;
+ z-index: 10000;
+ position: relative;
+ overflow: hidden;
+ /*box-shadow: 30px 25px 30px 0px #dddbe0;*/
+}
+#signup {
+ width: 100%;
+}
+#line {
+ width: 25px;
+ height: 2px;
+ background: white;
+ margin-left: 15px;
+}
+h1 {
+ padding: 25px 0px;
+ width: 90%;
+ font-weight: 100;
+ letter-spacing: 3px;
+}
+#form {
+ width: 90%;
+ padding-top: 75px;
+}
+.formfield {
+ position: relative;
+}
+input[type="button"] {
+ padding: 5px 15px;
+ background: none;
+ border: none;
+ box-shadow: none;
+ /*border: solid 1px #F4F4F8;*/
+ font-family: sans-serif;
+ text-transform: uppercase;
+ color: #F4F4F8;
+ font-size: 12px;
+ letter-spacing: 1.5px;
+ font-weight: lighter;
+ margin: 25px 0px;
+ box-shadow: 0px 0px 0px 1px #F4F4F8;
+}
+input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus {
+ /*border: solid 1px #fc4144;*/
+ box-shadow: none;
+ /*box-shadow: inset 90px 0px 0px 1px #fc4144;*/
+}
+input[type="text"], input[type="password"] {
+ padding: 3px;
+ width: 75%;
+ background: none;
+ border: none;
+ border-bottom: solid 1px #ff9b9d;
+ margin-bottom: 10px;
+ font-family: sans-serif;
+ text-transform: uppercase;
+ color: #F4F4F8;
+ font-size: 14px;
+ letter-spacing: 1.5px;
+ font-weight: lighter;
+}
+input[type="password"] {
+ letter-spacing: 4px;
+}
+input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus, input[type="text"]:valid, input[type="password"]:hover, input[type="password"]:active, input[type="password"]:focus, input[type="password"]:valid {
+ border-bottom: solid 20px #fc4144;
+}
+label {
+ position: absolute;
+ left: 5px;
+ top: 5px;
+ font-size: 12px;
+ letter-spacing: 1.5px;
+ font-weight: lighter;
+}
+input[type="text"]:hover + label, input[type="text"]:active + label, input[type="text"]:focus + label, input[type="text"]:valid + label, input[type="password"]:hover + label, input[type="password"]:active + label, input[type="password"]:focus + label, input[type="password"]:valid + label {
+ font-size: 10px;
+ color: #ff9b9d;
+ top: 26px;
+}
+#expand {
+ content: '';
+ background: #009FB7;
+ height: 0px;
+ width: 0px;
+ top: 35px;
+ left: 35px;
+ z-index: -10000;
+ transition: 1s ease all;
+ position: absolute;
+ transform: translate(-50%, -50%);
+ border-radius: 50%;
+}
+input[type="button"]:hover + #expand, input[type="button"]:active + #expand, input[type="button"]:focus + #expand {
+ height: 600px;
+ width: 600px;
+}
+/*---------------------*/
+
+#line1 {
+ width: 100px;
+ height: 10px;
+ background: green;
+}
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+<div id="signup">
+  <div id="line"></div>
+  <h1>DONATION FORM</h1>
+  <form id="form">
+    <div class="formfield">
+      <input type="text" id="name" name="name" required />
+      <label for="name">Name*</label>
+    </div>
+    <div class="formfield">
+      <input type="text" id="email" name="email" required />
+      <label for="email">Email*</label>
+    </div>
+    <div class="formfield">
+      <input type="text" id="name" name="name" required />
+      <label for="name">Mobile Number*</label>
+    </div>
+    <div class="formfield">
+      <input type="text" id="name" name="name" required />
+      <label for="name">Address*</label>
+    </div>
+    <div class="formfield">
+      <input type="text" id="name" name="name" required />
+      <label for="name">Pin Code*</label>
+    </div>
+    <div class="formfield">
+      <input type="text" id="password" name="password" required />
+      <label for="password">City*</label>
+    </div>
+    <div class="formfield">
+      <input type="text" id="passwordCheck" name="passwordCheck" required />
+      <label for="passwordCheck">State*</label>
+    </div>
+    <div class="formfield">
+      <input type="button" id="submit" name="submit" value="submit" />
+      <div id="expand"></div>
+    </div>
+  </form>
+</div>
+</div>
+
+  <script type="text/javascript">
+    var submit = document.querySelector("#submit");
+var expandBg = document.querySelector("#expand");
+
+submit.onclick = function() {
+  expandBg.style.background = "#fcd25a";
+}
+  </script>
+  </body>
+</html>
